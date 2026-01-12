@@ -38,6 +38,21 @@ src/
  └── utils/
       └── generateToken.js
 
+API Endpoints
+- Authentication
+Method	Endpoint	        Description	            Auth
+POST	/api/auth/register	Register user or agent	❌
+POST	/api/auth/login	    Login user or agent	    ❌
+
+- Tickets
+Method	Endpoint	                    Description	                        Auth
+POST	/api/tickets	                Create support ticket	            ✅ User
+GET	    /api/tickets/my	                Get tickets created by user	        ✅
+GET	    /api/tickets/status/:status	    Get tickets by status	            ✅
+PUT	    /api/tickets/:id/assign	        Assign ticket to agent	            ✅ Agent
+PUT	    /api/tickets/:id/status	        Update ticket status	            ✅ Agent
+POST	/api/tickets/:id/reply	        Reply to ticket	                    ✅
+
 Installation & Setup
 Clone repository
 git clone <https://github.com/Faithful-Andre/support-ticket-api.git>
